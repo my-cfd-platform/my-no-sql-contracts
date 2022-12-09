@@ -33,12 +33,12 @@ pub struct AssetNosqlModel {
 }
 
 impl AssetNosqlModel {
-    pub fn generate_partition_key() -> &'static str {
+    pub fn generate_pk() -> &'static str {
         "*"
     }
 
-    pub fn get_asset_id(&self) -> &str {
-        &self.row_key
+    pub fn generate_rk(symbol: Into<String>) -> String {
+        symbol.Into()
     }
 }
 
