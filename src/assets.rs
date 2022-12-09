@@ -37,8 +37,8 @@ impl AssetNosqlModel {
         "*"
     }
 
-    pub fn generate_rk(symbol: Into<String>) -> String {
-        symbol.Into()
+    pub fn generate_rk(symbol: String) -> String {
+        symbol
     }
 }
 
