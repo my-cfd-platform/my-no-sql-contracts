@@ -24,9 +24,9 @@ pub struct AssetNosqlModel {
     pub icon_url: String,
     #[serde(rename = "Type")]
     pub asset_type: String,
-    #[serde(rename = "weight")]
+    #[serde(rename = "Weight")]
     pub weight: String,
-    #[serde(rename = "brandIds")]
+    #[serde(rename = "BrandIds")]
     pub brand_ids: Vec<String>,
     #[serde(rename = "CanBeBase")]
     pub can_be_base: bool,
