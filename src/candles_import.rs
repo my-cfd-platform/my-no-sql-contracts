@@ -2,7 +2,7 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::*;
 
-pub const ASSETS_TABLE_NAME: &str = "candles-import-tasks";
+pub const TABLE_NAME: &str = "candles-import-tasks";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CandlesImportTaskNosqlModel {
