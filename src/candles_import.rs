@@ -5,7 +5,7 @@ use serde::*;
 pub const ASSETS_TABLE_NAME: &str = "candles-import-tasks";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct CandlesImportTaskNoSqlModel {
+pub struct CandlesImportTaskNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
     #[serde(rename = "PartitionKey")]
@@ -24,7 +24,7 @@ pub struct CandlesImportTaskNoSqlModel {
     pub last_import_datetime: Option<String>,
 }
 
-impl CandlesImportTaskNoSqlModel {
+impl CandlesImportTaskNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
@@ -34,7 +34,7 @@ impl CandlesImportTaskNoSqlModel {
     }
 }
 
-impl MyNoSqlEntity for CandlesImportTaskNoSqlModel {
+impl MyNoSqlEntity for CandlesImportTaskNosqlModel {
     fn get_partition_key(&self) -> &str {
         &self.partition_key
     }
