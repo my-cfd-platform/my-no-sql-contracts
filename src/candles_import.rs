@@ -22,6 +22,8 @@ pub struct CandlesImportTaskNosqlModel {
     pub end_datetime: String,
     #[serde(rename = "CurrentDatetime")]
     pub current_datetime: String,
+    #[serde(rename = "Source")]
+    pub source: i32,
 }
 
 impl CandlesImportTaskNosqlModel {
