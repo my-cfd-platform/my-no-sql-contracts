@@ -20,8 +20,8 @@ pub struct CandlesImportTaskNosqlModel {
     pub start_datetime: String,
     #[serde(rename = "EndDatetime")]
     pub end_datetime: String,
-    #[serde(rename = "LastImportDatetime")]
-    pub last_import_datetime: Option<String>,
+    #[serde(rename = "CurrentDatetime")]
+    pub current_datetime: String,
 }
 
 impl CandlesImportTaskNosqlModel {
