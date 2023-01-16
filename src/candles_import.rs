@@ -37,6 +37,8 @@ impl CandlesImportTaskNosqlModel {
 }
 
 impl MyNoSqlEntity for CandlesImportTaskNosqlModel {
+    const TABLE_NAME: &'static str = TABLE_NAME;
+
     fn get_partition_key(&self) -> &str {
         &self.partition_key
     }

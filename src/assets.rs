@@ -43,6 +43,8 @@ impl AssetNosqlModel {
 }
 
 impl MyNoSqlEntity for AssetNosqlModel {
+    const TABLE_NAME: &'static str = ASSETS_TABLE_NAME;
+
     fn get_partition_key(&self) -> &str {
         &self.partition_key
     }
