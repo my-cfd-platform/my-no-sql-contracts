@@ -14,7 +14,30 @@ pub struct AssetNosqlModel {
     pub timestamp: String,
     #[serde(rename = "Id")]
     pub id: String,
-    // todo: add all fields
+    #[serde(rename = "Name")]
+    pub name: String,
+    #[serde(rename = "Digits")]
+    pub digits: i32,
+    #[serde(rename = "Base")]
+    pub base: String,
+    #[serde(rename = "Quote")]
+    pub quote: String,
+    #[serde(rename = "TickSize")]
+    pub tick_size: f64,
+    #[serde(rename = "SwapScheduleId")]
+    pub swap_schedule_id: String,
+    #[serde(rename = "GroupId")]
+    pub group_id: Option<String>,
+    #[serde(rename = "SubGroupId")]
+    pub sub_grpup_id: Option<String>,
+    #[serde(rename = "Weight")]
+    pub weight: Option<i32>,
+    #[serde(rename = "DayTimeout")]
+    pub day_timeout: Option<i32>,
+    #[serde(rename = "NightTimeout")]
+    pub night_timeout: Option<i32>,
+    #[serde(rename = "TradingDisabled")]
+    pub trading_disabled: Option<i32>,
 }
 
 impl AssetNosqlModel {

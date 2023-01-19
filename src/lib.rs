@@ -2,3 +2,5 @@
 pub mod assets;
 #[cfg(feature="candles-import")]
 pub mod candles_import;
+#[cfg(feature="instruments")]
+pub mod instruments;
