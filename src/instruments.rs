@@ -40,17 +40,17 @@ pub struct InstrumentNosqlModel {
     pub trading_disabled: Option<i32>,
 }
 
-impl AssetNosqlModel {
+impl InstrumentNosqlModel {
     pub fn generate_pk() -> &'static str {
         "i"
     }
 
     pub fn generate_rk(id: String) -> String {
-        symbol
+        id
     }
 }
 
-impl MyNoSqlEntity for AssetNosqlModel {
+impl MyNoSqlEntity for InstrumentNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
