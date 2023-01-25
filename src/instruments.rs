@@ -14,8 +14,8 @@ pub struct InstrumentNosqlModel {
     pub timestamp: String,
     #[serde(rename = "Id")]
     pub id: Option<String>,
-    #[serde(rename = "Name")]
-    pub name: Option<String>,
+    //#[serde(rename = "Name")]
+    //pub name: Option<String>,
     #[serde(rename = "Digits")]
     pub digits: i32,
     #[serde(rename = "Base")]
@@ -24,18 +24,18 @@ pub struct InstrumentNosqlModel {
     pub quote: Option<String>,
     #[serde(rename = "TickSize")]
     pub tick_size: f64,
-    #[serde(rename = "SwapScheduleId")]
-    pub swap_schedule_id: String,
-    #[serde(rename = "GroupId")]
-    pub group_id: Option<String>,
-    #[serde(rename = "SubGroupId")]
-    pub sub_grpup_id: Option<String>,
+    //#[serde(rename = "SwapScheduleId")]
+    //pub swap_schedule_id: String,
+    //#[serde(rename = "GroupId")]
+    //pub group_id: Option<String>,
+    //#[serde(rename = "SubGroupId")]
+    //pub sub_grpup_id: Option<String>,
     #[serde(rename = "Weight")]
-    pub weight: Option<i32>,
+    pub weight: i32,
     #[serde(rename = "DayTimeout")]
-    pub day_timeout: Option<i32>,
+    pub day_timeout: i32,
     #[serde(rename = "NightTimeout")]
-    pub night_timeout: Option<i32>,
+    pub night_timeout: i32,
     #[serde(rename = "TradingDisabled")]
     pub trading_disabled: Option<bool>,
 }
