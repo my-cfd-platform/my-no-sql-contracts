@@ -37,7 +37,7 @@ pub struct InstrumentNosqlModel {
     #[serde(rename = "NightTimeout")]
     pub night_timeout: Option<i32>,
     #[serde(rename = "TradingDisabled")]
-    pub trading_disabled: Option<i32>,
+    pub trading_disabled: Option<bool>,
 }
 
 impl InstrumentNosqlModel {
