@@ -5,7 +5,7 @@ use serde::*;
 pub const TABLE_NAME: &str = "instruments";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct AssetNosqlModel {
+pub struct InstrumentNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
     #[serde(rename = "PartitionKey")]
