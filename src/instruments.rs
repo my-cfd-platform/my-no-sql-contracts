@@ -13,15 +13,15 @@ pub struct InstrumentNosqlModel {
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
     #[serde(rename = "Id")]
-    pub id: String,
+    pub id: Option<String>,
     #[serde(rename = "Name")]
-    pub name: String,
+    pub name: Option<String>,
     #[serde(rename = "Digits")]
     pub digits: i32,
     #[serde(rename = "Base")]
-    pub base: String,
+    pub base: Option<String>,
     #[serde(rename = "Quote")]
-    pub quote: String,
+    pub quote: Option<String>,
     #[serde(rename = "TickSize")]
     pub tick_size: f64,
     #[serde(rename = "SwapScheduleId")]
