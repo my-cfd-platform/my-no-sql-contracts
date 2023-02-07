@@ -2,7 +2,7 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::*;
 
-pub const TABLE_NAME: &str = "bidasks";
+pub const TABLE_NAME: &str = "quoteprofile";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct BidAskNosqlModel {
@@ -12,8 +12,8 @@ pub struct BidAskNosqlModel {
     pub partition_key: String,
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "InstrumentId")]
-    pub instrument_id: String,
+    #[serde(rename = "Id")]
+    pub id: String,
     #[serde(rename = "Bid")]
     pub bid: f64,
     #[serde(rename = "Ask")]
@@ -22,7 +22,7 @@ pub struct BidAskNosqlModel {
 
 impl BidAskNosqlModel {
     pub fn generate_pk() -> &'static str {
-        "*"
+        "qp"
     }
 
     pub fn generate_rk(symbol: String) -> String {
