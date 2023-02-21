@@ -6,3 +6,5 @@ pub mod candles_import;
 pub mod instruments;
 #[cfg(feature="bidasks")]
 pub mod bidasks;
+#[cfg(feature="bidasks")]
+pub mod bidask_history;
