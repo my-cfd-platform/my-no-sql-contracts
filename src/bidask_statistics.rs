@@ -16,9 +16,9 @@ pub struct BidAskStatisticNosqlModel {
     pub instrument_id: String,
     #[serde(rename = "PeriodType")]
     pub period_type: i32,
-    #[serde(rename = "Bid")]
+    #[serde(rename = "BidData")]
     pub bid_data: PriceStatisticDataNosqlModel,
-    #[serde(rename = "Ask")]
+    #[serde(rename = "AskData")]
     pub ask_data: PriceStatisticDataNosqlModel,
 }
 
