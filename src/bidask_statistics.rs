@@ -2,7 +2,7 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "bidasks-statistics";
+pub const TABLE_NAME: &str = "bidask-statistics";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct BidAskStatisticNosqlModel {
