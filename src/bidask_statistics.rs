@@ -2,10 +2,10 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "bidasks-history";
+pub const TABLE_NAME: &str = "bidasks-statistics";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct BidAskHistoryNosqlModel {
+pub struct BidAskStatisticNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
     #[serde(rename = "PartitionKey")]
@@ -17,26 +17,26 @@ pub struct BidAskHistoryNosqlModel {
     #[serde(rename = "PeriodType")]
     pub period_type: i32,
     #[serde(rename = "Bid")]
-    pub bid: PriceHistoryNosqlModel,
+    pub bid_data: PriceStatisticDataNosqlModel,
     #[serde(rename = "Ask")]
-    pub ask: PriceHistoryNosqlModel,
+    pub ask_data: PriceStatisticDataNosqlModel,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct PriceHistoryNosqlModel {
+pub struct PriceStatisticDataNosqlModel {
     #[serde(rename = "High")]
     pub high: f64,
     #[serde(rename = "Low")]
     pub low: f64,
-    #[serde(rename = "ChangeValue")]
-    pub change_value: f64,
-    #[serde(rename = "ChangePercent")]
-    pub change_percent: f64,
-    #[serde(rename = "BaseVolume")]
-    pub base_volume: f64,
+    #[serde(rename = "Open")]
+    pub open: f64,
+    #[serde(rename = "Close")]
+    pub close: f64,
+    #[serde(rename = "Volume")]
+    pub volume: f64,
 }
 
-impl BidAskHistoryNosqlModel {
+impl BidAskStatisticNosqlModel {
     pub fn generate_pk(period_type: i32) -> String {
         format!("{}", period_type)
     }
@@ -46,7 +46,7 @@ impl BidAskHistoryNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for BidAskHistoryNosqlModel {
+impl MyNoSqlEntity for BidAskStatisticNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {

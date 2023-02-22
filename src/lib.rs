@@ -7,4 +7,4 @@ pub mod instruments;
 #[cfg(feature="bidasks")]
 pub mod bidasks;
 #[cfg(feature="bidasks")]
-pub mod bidask_history;
+pub mod bidask_statistics;
