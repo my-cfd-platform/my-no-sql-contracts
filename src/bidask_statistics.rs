@@ -12,7 +12,7 @@ pub struct BidAskStatisticNosqlModel {
     pub partition_key: String,
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "InstumentId")]
+    #[serde(rename = "InstrumentId")]
     pub instrument_id: String,
     #[serde(rename = "PeriodType")]
     pub period_type: i32,
