@@ -12,27 +12,27 @@ pub struct BidAskStatisticNosqlModel {
     pub partition_key: String,
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "i")]
+    #[serde(rename = "I")]
     pub instrument_id: String,
-    #[serde(rename = "p")]
+    #[serde(rename = "P")]
     pub period_type: i32,
-    #[serde(rename = "b")]
+    #[serde(rename = "B")]
     pub bid_data: PriceStatisticDataNosqlModel,
-    #[serde(rename = "a")]
+    #[serde(rename = "A")]
     pub ask_data: PriceStatisticDataNosqlModel,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct PriceStatisticDataNosqlModel {
-    #[serde(rename = "h")]
+    #[serde(rename = "H")]
     pub high: f64,
-    #[serde(rename = "l")]
+    #[serde(rename = "L")]
     pub low: f64,
-    #[serde(rename = "o")]
+    #[serde(rename = "O")]
     pub open: f64,
-    #[serde(rename = "c")]
+    #[serde(rename = "C")]
     pub close: f64,
-    #[serde(rename = "v")]
+    #[serde(rename = "V")]
     pub volume: f64,
 }
 
