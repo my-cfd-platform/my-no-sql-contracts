@@ -26,12 +26,12 @@ pub struct InstrumentNosqlModel {
     //pub tick_size: f64,
     //#[serde(rename = "SwapScheduleId")]
     //pub swap_schedule_id: String,
-    //#[serde(rename = "GroupId")]
-    //pub group_id: Option<String>,
+    #[serde(rename = "GroupId")]
+    pub group_id: Option<String>,
     //#[serde(rename = "SubGroupId")]
     //pub sub_grpup_id: Option<String>,
-    //#[serde(rename = "Weight")]
-    //pub weight: i32,
+    #[serde(rename = "Weight")]
+    pub weight: i32,
     //#[serde(rename = "DayTimeout")]
     //pub day_timeout: i32,
     //#[serde(rename = "NightTimeout")]
