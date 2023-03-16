@@ -20,6 +20,8 @@ pub struct AssetStatisticNosqlModel {
     pub circulating_supply: f64,
     #[serde(rename = "MarketCap")]
     pub market_cap: f64,
+    #[serde(rename = "FullyDilutedValuation")]
+    pub fully_diluted_valuation: f64,
     #[serde(rename = "Rank")]
     pub rank: i32,
     #[serde(rename = "LastPrice")]
