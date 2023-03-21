@@ -12,3 +12,4 @@ pub mod instruments;
 pub mod bidasks;
 #[cfg(feature="bidasks")]
 pub mod bidask_statistics;
+pub mod blockchains;
