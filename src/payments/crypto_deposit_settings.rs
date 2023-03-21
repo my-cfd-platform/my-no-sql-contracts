@@ -1,9 +1,9 @@
 use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
-use crate::payments::shared::PaymentAssetNosqlModel;
+use crate::payments::shared::CryptoPaymentAssetNosqlModel;
 
-pub const TABLE_NAME: &str = "deposit-methods";
+pub const TABLE_NAME: &str = "crypto-deposit-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct DepositMethodNosqlModel {
@@ -13,14 +13,14 @@ pub struct DepositMethodNosqlModel {
     pub partition_key: String,
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "PaymentType")]
-    pub payment_type: i32,
+    #[serde(rename = "Priority")]
+    pub priority: i32,
     #[serde(rename = "PaymentProvider")]
     pub payment_provider: i32,
     #[serde(rename = "Name")]
     pub name: String,
     #[serde(rename = "Assets")]
-    pub assets: Vec<PaymentAssetNosqlModel>,
+    pub assets: Vec<CryptoPaymentAssetNosqlModel>,
 }
 
 impl DepositMethodNosqlModel {

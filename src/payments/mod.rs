@@ -1,2 +1,2 @@
 pub mod shared;
-pub mod deposit_methods;
+pub mod crypto_deposit_settings;
