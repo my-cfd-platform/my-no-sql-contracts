@@ -6,7 +6,7 @@ use crate::payments::shared::CryptoPaymentAssetNosqlModel;
 pub const TABLE_NAME: &str = "crypto-deposit-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct DepositMethodNosqlModel {
+pub struct CryptoDepositSettingsNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
     #[serde(rename = "PartitionKey")]
@@ -23,7 +23,7 @@ pub struct DepositMethodNosqlModel {
     pub assets: Vec<CryptoPaymentAssetNosqlModel>,
 }
 
-impl DepositMethodNosqlModel {
+impl CryptoDepositSettingsNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
@@ -33,7 +33,7 @@ impl DepositMethodNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for DepositMethodNosqlModel {
+impl MyNoSqlEntity for CryptoDepositSettingsNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
