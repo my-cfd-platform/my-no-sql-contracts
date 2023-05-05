@@ -16,5 +16,5 @@ pub mod bidask_statistics;
 pub mod blockchains;
 #[cfg(feature="payments")]
 pub mod payments;
-#[cfg(feature="external_balances")]
+#[cfg(feature="external-balances")]
 pub mod external_balances;
