@@ -28,6 +28,8 @@ pub struct BlockchainNosqlModel {
     pub tx_url: String,
     #[serde(rename = "AddressUrl")]
     pub address_url: String,
+    #[serde(rename = "SupportsMemo")]
+    pub supports_memo: bool,
 }
 
 impl BlockchainNosqlModel {
