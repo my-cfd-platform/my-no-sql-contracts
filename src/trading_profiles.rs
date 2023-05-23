@@ -30,6 +30,12 @@ pub struct TradingProfileInstrumentNosqlModel {
     pub min_invest_amount: Option<f64>,
     #[serde(rename = "MaxCumulativeInvestVolume")]
     pub max_cumulative_invest_volume: Option<f64>,
+    #[serde(rename = "Leverages")]
+    pub leverages: Vec<i32>,
+    #[serde(rename = "OpenPositionMaxDelayMs")]
+    pub max_open_position_delay_millis: i32,
+    #[serde(rename = "OpenPositionMinDelayMs")]
+    pub min_open_position_delay_millis: i32,
 }
 
 impl TradingProfileNosqlModel {
