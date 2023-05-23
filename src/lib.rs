@@ -20,3 +20,5 @@ pub mod payments;
 pub mod external_balances;
 #[cfg(feature="trading-profiles")]
 pub mod trading_profiles;
+#[cfg(feature="trading-group")]
+pub mod trading_groups;
