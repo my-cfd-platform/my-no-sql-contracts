@@ -18,3 +18,5 @@ pub mod blockchains;
 pub mod payments;
 #[cfg(feature="external-balances")]
 pub mod external_balances;
+#[cfg(feature="trading-profiles")]
+pub mod trading_profiles;
