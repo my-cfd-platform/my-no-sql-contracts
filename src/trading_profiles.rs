@@ -24,10 +24,12 @@ pub struct TradingProfileNosqlModel {
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct TradingProfileInstrumentNosqlModel {
+    #[serde(rename = "Id")]
+    pub id: String,
     #[serde(rename = "MinInvestAmount")]
-    pub min_invest_amount: String,
+    pub min_invest_amount: Option<f64>,
     #[serde(rename = "MaxCumulativeInvestVolume")]
-    pub max_cumulative_invest_volume: String,
+    pub max_cumulative_invest_volume: Option<f64>,
 }
 
 impl TradingProfileNosqlModel {
