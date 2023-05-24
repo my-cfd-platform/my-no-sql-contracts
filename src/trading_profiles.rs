@@ -13,11 +13,11 @@ pub struct TradingProfileNosqlModel {
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
     #[serde(rename = "MarginCallPercent")]
-    pub margin_call_percent: String,
+    pub margin_call_percent: f64,
     #[serde(rename = "StopOutPercent")]
-    pub stop_out_percent: String,
+    pub stop_out_percent: f64,
     #[serde(rename = "TopUpPercent")]
-    pub top_up_percent: String,
+    pub top_up_percent: f64,
     #[serde(rename = "Instruments")]
     pub instruments: Vec<TradingProfileInstrumentNosqlModel>,
 }
