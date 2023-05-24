@@ -16,6 +16,8 @@ pub struct CryptoPaymentAssetNosqlModel {
     pub fee_amount: Option<f64>,
     #[serde(rename = "FeeType")]
     pub fee_type: i32,
+    #[serde(rename = "MinFeeAmount")]
+    pub min_fee_amount: Option<f64>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
