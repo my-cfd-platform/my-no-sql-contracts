@@ -16,8 +16,8 @@ pub struct InstrumentNosqlModel {
     pub id: Option<String>,
     //#[serde(rename = "Name")]
     //pub name: Option<String>,
-    //#[serde(rename = "Digits")]
-    //pub digits: i32,
+    #[serde(rename = "Digits")]
+    pub digits: i32,
     #[serde(rename = "Base")]
     pub base: Option<String>,
     #[serde(rename = "Quote")]
