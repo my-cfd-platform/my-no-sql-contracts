@@ -18,6 +18,8 @@ pub struct ExternalBalanceNosqlModel {
     pub asset_amount: f64,
     #[serde(rename = "PaymentProvider")]
     pub payment_provider: i32,
+    #[serde(rename = "BlockchainSymbol")]
+    pub blockchain_symbol: String,
 }
 
 impl ExternalBalanceNosqlModel {
@@ -25,8 +27,8 @@ impl ExternalBalanceNosqlModel {
         payment_provider.to_string()
     }
 
-    pub fn generate_rk(asset_symbol: String) -> String {
-        asset_symbol
+    pub fn generate_rk(asset_symbol: String, blockchain_symbol: String) -> String {
+        format!("{asset_symbol}{blockchain_symbol}")
     }
 }
 
