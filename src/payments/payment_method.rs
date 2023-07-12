@@ -19,7 +19,7 @@ pub struct PaymentMethodNosqlModel {
     #[serde(rename = "Id")]
     pub id: String,
     #[serde(rename = "IconUrl")]
-    pub icon_url: String,
+    pub icon_url: Option<String>,
 }
 
 impl PaymentMethodNosqlModel {
