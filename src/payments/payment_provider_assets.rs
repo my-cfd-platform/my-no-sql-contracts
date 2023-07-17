@@ -23,8 +23,8 @@ pub struct CryptoBuySettingsNosqlModel {
 }
 
 impl CryptoBuySettingsNosqlModel {
-    pub fn generate_pk() -> &'static str {
-        "*"
+    pub fn generate_pk(payment_provider: i32) -> String {
+        payment_provider.to_string()
     }
 
     pub fn generate_rk(id: &str) -> &str {
