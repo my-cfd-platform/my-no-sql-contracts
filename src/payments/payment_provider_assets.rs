@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub const TABLE_NAME: &str = "payment-provider-assets";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct CryptoBuySettingsNosqlModel {
+pub struct PaymentProviderAssetNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
     #[serde(rename = "PartitionKey")]
@@ -22,7 +22,7 @@ pub struct CryptoBuySettingsNosqlModel {
     pub asset_symbol: String,
 }
 
-impl CryptoBuySettingsNosqlModel {
+impl PaymentProviderAssetNosqlModel {
     pub fn generate_pk(payment_provider: i32) -> String {
         payment_provider.to_string()
     }
@@ -32,7 +32,7 @@ impl CryptoBuySettingsNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for CryptoBuySettingsNosqlModel {
+impl MyNoSqlEntity for PaymentProviderAssetNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
