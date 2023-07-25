@@ -13,7 +13,7 @@ pub struct CryptoPaymentAssetNosqlModel {
     #[serde(rename = "MaxAmount")]
     pub max_amount: Option<f64>,
     #[serde(rename = "FeeFixedAmount")]
-    pub fee_fixed_amount: Option<i32>,
+    pub fee_fixed_amount: Option<f64>,
     #[serde(rename = "FeePercent")]
     pub fee_percent: Option<f64>,
 }
