@@ -11,7 +11,6 @@ pub struct PendingQuoteNosqlModel {
     pub partition_key: String,
     pub timestamp: String,
     pub expires: String,
-
     pub id: String,
     pub trader_id: String,
     pub wallet_id: String,
@@ -26,6 +25,7 @@ pub struct PendingQuoteNosqlModel {
     pub price: f64,
     pub fee_asset_symbol: String,
     pub fee_asset_amount: f64,
+    pub quote_type: i32,
 }
 
 impl PendingQuoteNosqlModel {
