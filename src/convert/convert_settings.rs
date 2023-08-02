@@ -11,8 +11,8 @@ pub struct ConvertSettingsNosqlModel {
     pub partition_key: String,
     pub timestamp: String,
     pub id: String,
-    pub client_quote_lifetime_sec: i64,
-    pub internal_quote_lifetime_sec: i64,
+    pub client_quote_lifetime_secs: i64,
+    pub internal_quote_lifetime_secs: i64,
 }
 
 impl ConvertSettingsNosqlModel {
