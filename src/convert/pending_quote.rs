@@ -5,20 +5,32 @@ use serde::{Deserialize, Serialize};
 pub const TABLE_NAME: &str = "pending-quotes";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
+#[serde(rename_all = "PascalCase")]
 pub struct PendingQuoteNosqlModel {
-    #[serde(rename = "RowKey")]
     pub row_key: String,
-    #[serde(rename = "PartitionKey")]
     pub partition_key: String,
-    #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "Id")]
+    pub expires: String,
+
     pub id: String,
+    pub trader_id: String,
+    pub wallet_id: String,
+    pub create_ts_micros: i64,
+    pub expire_ts_micros: i64,
+    pub from_asset_amount: f64,
+    pub from_asset_symbol: String,
+    pub to_asset_symbol: String,
+    pub to_asset_amount: f64,
+    pub rfq_asset_amount: f64,
+    pub rfq_asset_symbol: String,
+    pub price: f64,
+    pub fee_asset_symbol: String,
+    pub fee_asset_amount: f64,
 }
 
 impl PendingQuoteNosqlModel {
-    pub fn generate_pk() -> &'static str {
-        "*"
+    pub fn generate_pk(trader_id: &str) -> &str {
+        trader_id
     }
 
     pub fn generate_rk(id: &str) -> &str {
