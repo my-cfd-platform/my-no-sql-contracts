@@ -5,15 +5,14 @@ use serde::{Deserialize, Serialize};
 pub const TABLE_NAME: &str = "convert-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
+#[serde(rename_all = "PascalCase")]
 pub struct ConvertSettingsNosqlModel {
-    #[serde(rename = "RowKey")]
     pub row_key: String,
-    #[serde(rename = "PartitionKey")]
     pub partition_key: String,
-    #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "Id")]
     pub id: String,
+    pub client_quote_lifetime_sec: i64,
+    pub internal_quote_lifetime_sec: i64,
 }
 
 impl ConvertSettingsNosqlModel {
