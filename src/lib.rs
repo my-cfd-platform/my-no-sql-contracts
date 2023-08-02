@@ -24,3 +24,5 @@ pub mod trading_profiles;
 pub mod trading_groups;
 #[cfg(feature="markup-profiles")]
 pub mod markup_profiles;
+#[cfg(feature="convert")]
+pub mod convert;
