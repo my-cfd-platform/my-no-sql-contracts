@@ -13,6 +13,17 @@ pub struct ConvertSettingsNosqlModel {
     pub id: String,
     pub client_quote_lifetime_secs: i64,
     pub internal_quote_lifetime_secs: i64,
+    pub cross_asset_symbol: String,
+    pub assets: Vec<ConvertAssetNosqlModel>,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+#[serde(rename_all = "PascalCase")]
+pub struct ConvertAssetNosqlModel {
+    pub symbol: String,
+    pub min_amount: Option<f64>,
+    pub max_amount: Option<f64>,
+    pub fee_percent: Option<f64>,
 }
 
 impl ConvertSettingsNosqlModel {
