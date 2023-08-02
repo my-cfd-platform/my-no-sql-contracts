@@ -1,7 +1,6 @@
 use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
-use crate::payments::shared::CryptoPaymentAssetNosqlModel;
 
 pub const TABLE_NAME: &str = "pending-quotes";
 
