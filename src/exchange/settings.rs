@@ -14,12 +14,12 @@ pub struct ExhcnageSettingsNosqlModel {
     pub client_quote_lifetime_secs: i64,
     pub internal_quote_lifetime_secs: i64,
     pub cross_asset_symbol: String,
-    pub assets: Vec<ConvertAssetNosqlModel>,
+    pub assets: Vec<ExchangeAssetNosqlModel>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ConvertAssetNosqlModel {
+pub struct ExchangeAssetNosqlModel {
     pub symbol: String,
     pub min_amount: Option<f64>,
     pub max_amount: Option<f64>,
