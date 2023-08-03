@@ -15,6 +15,7 @@ pub struct ExchangeSettingsNosqlModel {
     pub internal_quote_lifetime_secs: i64,
     pub cross_asset_symbol: String,
     pub assets: Vec<ExchangeAssetNosqlModel>,
+    pub asset_pairs: Vec<ExchangeAssetPairNosqlModel>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -24,6 +25,18 @@ pub struct ExchangeAssetNosqlModel {
     pub min_amount: Option<f64>,
     pub max_amount: Option<f64>,
     pub fee_percent: Option<f64>,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+#[serde(rename_all = "PascalCase")]
+pub struct ExchangeAssetPairNosqlModel {
+    pub base_asset_symbol: String,
+    pub base_min_amount: Option<f64>,
+    pub base_max_amount: Option<f64>,
+    pub quote_asset_symbol: String,
+    pub quote_min_amount: Option<f64>,
+    pub quote_max_amount: Option<f64>,
+    pub quote_fee_percent: Option<f64>,
 }
 
 impl ExchangeSettingsNosqlModel {

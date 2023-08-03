@@ -15,7 +15,6 @@ pub struct ExchangePendingQuoteNosqlModel {
     pub trader_id: String,
     pub wallet_id: String,
     pub create_ts_micros: i64,
-    pub expire_ts_micros: i64,
     pub from_asset_amount: f64,
     pub from_asset_symbol: String,
     pub to_asset_symbol: String,
