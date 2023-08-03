@@ -6,7 +6,7 @@ pub const TABLE_NAME: &str = "exchange-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ConvertSettingsNosqlModel {
+pub struct ExhcnageSettingsNosqlModel {
     pub row_key: String,
     pub partition_key: String,
     pub timestamp: String,
@@ -26,7 +26,7 @@ pub struct ConvertAssetNosqlModel {
     pub fee_percent: Option<f64>,
 }
 
-impl ConvertSettingsNosqlModel {
+impl ExhcnageSettingsNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
@@ -36,7 +36,7 @@ impl ConvertSettingsNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for ConvertSettingsNosqlModel {
+impl MyNoSqlEntity for ExhcnageSettingsNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
