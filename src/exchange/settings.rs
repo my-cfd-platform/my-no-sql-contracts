@@ -6,7 +6,7 @@ pub const TABLE_NAME: &str = "exchange-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ExhcnageSettingsNosqlModel {
+pub struct ExchangeSettingsNosqlModel {
     pub row_key: String,
     pub partition_key: String,
     pub timestamp: String,
@@ -26,7 +26,7 @@ pub struct ExchangeAssetNosqlModel {
     pub fee_percent: Option<f64>,
 }
 
-impl ExhcnageSettingsNosqlModel {
+impl ExchangeSettingsNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
@@ -36,7 +36,7 @@ impl ExhcnageSettingsNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for ExhcnageSettingsNosqlModel {
+impl MyNoSqlEntity for ExchangeSettingsNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
