@@ -2,43 +2,41 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "pending-quotes";
+pub const TABLE_NAME: &str = "exchange-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct PendingQuoteNosqlModel {
+pub struct ConvertSettingsNosqlModel {
     pub row_key: String,
     pub partition_key: String,
     pub timestamp: String,
-    pub expires: String,
     pub id: String,
-    pub trader_id: String,
-    pub wallet_id: String,
-    pub create_ts_micros: i64,
-    pub expire_ts_micros: i64,
-    pub from_asset_amount: f64,
-    pub from_asset_symbol: String,
-    pub to_asset_symbol: String,
-    pub to_asset_amount: f64,
-    pub rfq_asset_amount: f64,
-    pub rfq_asset_symbol: String,
-    pub price: f64,
-    pub fee_asset_symbol: String,
-    pub fee_asset_amount: f64,
-    pub quote_type: i32,
+    pub client_quote_lifetime_secs: i64,
+    pub internal_quote_lifetime_secs: i64,
+    pub cross_asset_symbol: String,
+    pub assets: Vec<ConvertAssetNosqlModel>,
 }
 
-impl PendingQuoteNosqlModel {
-    pub fn generate_pk(trader_id: &str) -> &str {
-        trader_id
+#[derive(Serialize, Deserialize, Debug, Clone)]
+#[serde(rename_all = "PascalCase")]
+pub struct ConvertAssetNosqlModel {
+    pub symbol: String,
+    pub min_amount: Option<f64>,
+    pub max_amount: Option<f64>,
+    pub fee_percent: Option<f64>,
+}
+
+impl ConvertSettingsNosqlModel {
+    pub fn generate_pk() -> &'static str {
+        "*"
     }
 
-    pub fn generate_rk(id: &str) -> &str {
-        id
+    pub fn generate_rk() -> &'static str {
+        "*"
     }
 }
 
-impl MyNoSqlEntity for PendingQuoteNosqlModel {
+impl MyNoSqlEntity for ConvertSettingsNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
