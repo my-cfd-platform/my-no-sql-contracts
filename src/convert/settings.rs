@@ -2,11 +2,11 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "exchange-settings";
+pub const TABLE_NAME: &str = "convert-settings";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ExchangeSettingsNosqlModel {
+pub struct ConvertSettingsNosqlModel {
     pub row_key: String,
     pub partition_key: String,
     pub timestamp: String,
@@ -14,13 +14,13 @@ pub struct ExchangeSettingsNosqlModel {
     pub quote_refresh_period_secs: i64,
     pub quote_lifetime_secs: i64,
     pub cross_asset_symbol: String,
-    pub assets: Vec<ExchangeAssetNosqlModel>,
-    pub asset_pairs: Vec<ExchangeAssetPairNosqlModel>,
+    pub assets: Vec<ConvertAssetNosqlModel>,
+    pub asset_pairs: Vec<ConvertAssetPairNosqlModel>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ExchangeAssetNosqlModel {
+pub struct ConvertAssetNosqlModel {
     pub symbol: String,
     pub min_amount: Option<f64>,
     pub max_amount: Option<f64>,
@@ -29,7 +29,7 @@ pub struct ExchangeAssetNosqlModel {
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ExchangeAssetPairNosqlModel {
+pub struct ConvertAssetPairNosqlModel {
     pub base_asset_symbol: String,
     pub base_min_amount: Option<f64>,
     pub base_max_amount: Option<f64>,
@@ -39,7 +39,7 @@ pub struct ExchangeAssetPairNosqlModel {
     pub quote_fee_percent: Option<f64>,
 }
 
-impl ExchangeSettingsNosqlModel {
+impl ConvertSettingsNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
@@ -49,7 +49,7 @@ impl ExchangeSettingsNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for ExchangeSettingsNosqlModel {
+impl MyNoSqlEntity for ConvertSettingsNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
