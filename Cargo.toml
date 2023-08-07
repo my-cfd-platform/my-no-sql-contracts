@@ -1,6 +1,6 @@
 [package]
 name = "nosql-contracts"
-version = "0.4.23"
+version = "0.4.22"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -17,7 +17,7 @@ external-balances = []
 trading-profiles = []
 trading-groups = []
 markup-profiles = []
-convert = []
+exchange = []
 
 [dependencies]
 my-no-sql-server-abstractions = { tag = "0.1.1", git = "https://github.com/MyJetTools/my-no-sql-server-abstractions.git" }

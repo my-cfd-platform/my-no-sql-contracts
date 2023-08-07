@@ -2,11 +2,11 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "convert-pending-quotes";
+pub const TABLE_NAME: &str = "exchange-pending-quotes";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ConvertPendingQuoteNosqlModel {
+pub struct ExchangePendingQuoteNosqlModel {
     pub row_key: String,
     pub partition_key: String,
     pub timestamp: String,
@@ -28,7 +28,7 @@ pub struct ConvertPendingQuoteNosqlModel {
     pub quote_type: i32,
 }
 
-impl ConvertPendingQuoteNosqlModel {
+impl ExchangePendingQuoteNosqlModel {
     pub fn generate_pk(trader_id: &str) -> &str {
         trader_id
     }
@@ -38,7 +38,7 @@ impl ConvertPendingQuoteNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for ConvertPendingQuoteNosqlModel {
+impl MyNoSqlEntity for ExchangePendingQuoteNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
