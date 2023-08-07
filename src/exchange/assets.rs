@@ -2,31 +2,31 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "exchange-settings";
+pub const TABLE_NAME: &str = "exchange-assets";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
-pub struct ExchangeSettingsNosqlModel {
+pub struct ExchangeAssetNosqlModel {
     pub row_key: String,
     pub partition_key: String,
     pub timestamp: String,
-    pub id: String,
-    pub quote_refresh_period_secs: i64,
-    pub quote_lifetime_secs: i64,
-    pub cross_asset_symbol: String,
+    pub symbol: String,
+    pub min_amount: Option<f64>,
+    pub max_amount: Option<f64>,
+    pub fee_percent: Option<f64>,
 }
 
-impl ExchangeSettingsNosqlModel {
+impl ExchangeAssetNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
 
-    pub fn generate_rk() -> &'static str {
-        "*"
+    pub fn generate_rk(symbol: &str) -> &str {
+        symbol
     }
 }
 
-impl MyNoSqlEntity for ExchangeSettingsNosqlModel {
+impl MyNoSqlEntity for ExchangeAssetNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
