@@ -26,6 +26,7 @@ pub struct ExchangePendingQuoteNosqlModel {
     pub fee_asset_symbol: String,
     pub fee_asset_amount: f64,
     pub quote_type: i32,
+    pub operation_id: String,
 }
 
 impl ExchangePendingQuoteNosqlModel {
