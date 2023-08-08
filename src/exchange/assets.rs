@@ -9,6 +9,7 @@ pub const TABLE_NAME: &str = "exchange-assets";
 pub struct ExchangeAssetNosqlModel {
     pub row_key: String,
     pub partition_key: String,
+    #[serde(rename = "TimeStamp")]
     pub timestamp: String,
     pub symbol: String,
     pub min_amount: Option<f64>,
