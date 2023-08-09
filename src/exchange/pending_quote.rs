@@ -9,6 +9,7 @@ pub const TABLE_NAME: &str = "exchange-pending-quotes";
 pub struct ExchangePendingQuoteNosqlModel {
     pub row_key: String,
     pub partition_key: String,
+    #[serde(rename = "TimeStamp")]
     pub timestamp: String,
     pub expires: String,
     pub id: String,
