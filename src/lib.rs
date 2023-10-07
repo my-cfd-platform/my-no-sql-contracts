@@ -26,3 +26,5 @@ pub mod trading_groups;
 pub mod markup_profiles;
 #[cfg(feature="exchange")]
 pub mod exchange;
+#[cfg(feature="images")]
+pub mod images;
