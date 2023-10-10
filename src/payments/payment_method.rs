@@ -13,13 +13,14 @@ pub struct PaymentMethodNosqlModel {
     pub partition_key: String,
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-
     #[serde(rename = "Name")]
     pub name: String,
     #[serde(rename = "Id")]
     pub id: String,
     #[serde(rename = "IconUrl")]
     pub icon_url: Option<String>,
+    #[serde(rename = "Weight")]
+    pub weight: Option<i32>,
 }
 
 impl PaymentMethodNosqlModel {
