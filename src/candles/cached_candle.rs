@@ -17,9 +17,9 @@ pub struct CacheCandleNosqlModel {
     #[serde(rename = "Instrument")]
     pub instrument: String,
     #[serde(rename = "BidData")]
-    pub bid_data: String,
+    pub bid_data: CacheCandleDataNosqlModel,
     #[serde(rename = "AskData")]
-    pub ask_data: String,
+    pub ask_data: CacheCandleDataNosqlModel,
     #[serde(rename = "Expires")]
     pub expires: String,
     #[serde(rename = "DateMicros")]
