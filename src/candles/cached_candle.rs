@@ -12,25 +12,32 @@ pub struct CacheCandleNosqlModel {
     pub partition_key: String,
     #[serde(rename = "TimeStamp")]
     pub timestamp: String,
-    #[serde(rename = "CandleType")]
-    pub candle_type: i32,
-    #[serde(rename = "Instrument")]
-    pub instrument: String,
-    #[serde(rename = "BidData")]
-    pub bid_data: CacheCandleDataNosqlModel,
-    #[serde(rename = "AskData")]
-    pub ask_data: CacheCandleDataNosqlModel,
     #[serde(rename = "Expires")]
     pub expires: String,
-    #[serde(rename = "DateMicros")]
+
+    #[serde(rename = "T")]
+    pub candle_type: i32,
+    #[serde(rename = "I")]
+    pub instrument: String,
+    #[serde(rename = "B")]
+    pub bid_data: CacheCandleDataNosqlModel,
+    #[serde(rename = "A")]
+    pub ask_data: CacheCandleDataNosqlModel,
+    #[serde(rename = "D")]
     pub date_micros: i64,
 }
 
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CacheCandleDataNosqlModel {
+    #[serde(rename = "O")]
     pub open: String,
+    #[serde(rename = "C")]
     pub close: String,
+    #[serde(rename = "H")]
     pub high: String,
+    #[serde(rename = "L")]
     pub low: String,
+    #[serde(rename = "V")]
     pub volume: String,
 }
 
