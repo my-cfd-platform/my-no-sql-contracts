@@ -2,10 +2,10 @@ use my_no_sql_server_abstractions::MyNoSqlEntity;
 use rust_extensions::date_time::DateTimeAsMicroseconds;
 use serde::*;
 
-pub const TABLE_NAME: &str = "cached-candles";
+pub const TABLE_NAME: &str = "cache-candles";
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct CachedCandleNosqlModel {
+pub struct CacheCandleNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
     #[serde(rename = "PartitionKey")]
@@ -22,9 +22,19 @@ pub struct CachedCandleNosqlModel {
     pub ask_data_json: String,
     #[serde(rename = "Expires")]
     pub expires: String,
+    #[serde(rename = "Date")]
+    pub date: String,
 }
 
-impl CachedCandleNosqlModel {
+pub struct CacheCandleData {
+    pub open: f64,
+    pub close: f64,
+    pub high: f64,
+    pub low: f64,
+    pub volume: f64,
+}
+
+impl CacheCandleNosqlModel {
     pub fn generate_pk(instrument: &str) -> &str{
         instrument
     }
@@ -34,7 +44,7 @@ impl CachedCandleNosqlModel {
     }
 }
 
-impl MyNoSqlEntity for CachedCandleNosqlModel {
+impl MyNoSqlEntity for CacheCandleNosqlModel {
     const TABLE_NAME: &'static str = TABLE_NAME;
 
     fn get_partition_key(&self) -> &str {
