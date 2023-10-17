@@ -20,6 +20,8 @@ pub struct CachedCandleNosqlModel {
     pub bid_data_json: String,
     #[serde(rename = "AskDataJson")]
     pub ask_data_json: String,
+    #[serde(rename = "Expires")]
+    pub expires: String,
 }
 
 impl CachedCandleNosqlModel {
