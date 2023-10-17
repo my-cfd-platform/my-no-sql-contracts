@@ -22,8 +22,8 @@ pub struct CacheCandleNosqlModel {
     pub ask_data_json: String,
     #[serde(rename = "Expires")]
     pub expires: String,
-    #[serde(rename = "Date")]
-    pub date: String,
+    #[serde(rename = "DateMicros")]
+    pub date_micros: i64,
 }
 
 pub struct CacheCandleData {
