@@ -27,11 +27,11 @@ pub struct CacheCandleNosqlModel {
 }
 
 pub struct CacheCandleDataNosqlModel {
-    pub open: f64,
-    pub close: f64,
-    pub high: f64,
-    pub low: f64,
-    pub volume: f64,
+    pub open: String,
+    pub close: String,
+    pub high: String,
+    pub low: String,
+    pub volume: String,
 }
 
 impl CacheCandleNosqlModel {
