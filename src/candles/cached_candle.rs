@@ -26,7 +26,7 @@ pub struct CacheCandleNosqlModel {
     pub date_micros: i64,
 }
 
-pub struct CacheCandleData {
+pub struct CacheCandleDataNosqlModel {
     pub open: f64,
     pub close: f64,
     pub high: f64,
