@@ -28,3 +28,5 @@ pub mod markup_profiles;
 pub mod exchange;
 #[cfg(feature="images")]
 pub mod images;
+#[cfg(feature="candles")]
+pub mod candles;
