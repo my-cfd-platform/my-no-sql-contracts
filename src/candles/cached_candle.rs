@@ -16,10 +16,10 @@ pub struct CacheCandleNosqlModel {
     pub candle_type: i32,
     #[serde(rename = "Instrument")]
     pub instrument: String,
-    #[serde(rename = "BidDataJson")]
-    pub bid_data_json: String,
-    #[serde(rename = "AskDataJson")]
-    pub ask_data_json: String,
+    #[serde(rename = "BidData")]
+    pub bid_data: String,
+    #[serde(rename = "AskData")]
+    pub ask_data: String,
     #[serde(rename = "Expires")]
     pub expires: String,
     #[serde(rename = "DateMicros")]
