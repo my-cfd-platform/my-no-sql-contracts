@@ -1,10 +1,8 @@
-use my_no_sql_server_abstractions::MyNoSqlEntity;
-use rust_extensions::date_time::DateTimeAsMicroseconds;
+service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-pub const TABLE_NAME: &str = "markup-profiles";
-
 #[derive(Serialize, Deserialize, Debug, Clone)]
+#[my_no_sql_entity("markup-profiles")]
 pub struct MarkupProfileNosqlModel {
     #[serde(rename = "RowKey")]
     pub row_key: String,
@@ -33,23 +31,5 @@ impl MarkupProfileNosqlModel {
 
     pub fn generate_rk(id: &str) -> &str {
         id
-    }
-}
-
-impl MyNoSqlEntity for MarkupProfileNosqlModel {
-    const TABLE_NAME: &'static str = TABLE_NAME;
-
-    fn get_partition_key(&self) -> &str {
-        &self.partition_key
-    }
-
-    fn get_row_key(&self) -> &str {
-        &self.row_key
-    }
-
-    fn get_time_stamp(&self) -> i64 {
-        DateTimeAsMicroseconds::parse_iso_string(self.timestamp.as_str())
-            .expect("Failed to parse timestamp")
-            .unix_microseconds
     }
 }
