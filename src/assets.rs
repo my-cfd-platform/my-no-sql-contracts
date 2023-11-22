@@ -4,8 +4,6 @@ use serde::{Deserialize, Serialize};
 #[my_no_sql_entity("assets")]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct AssetNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Accuracy")]
     pub accuracy: i32,
     #[serde(rename = "IsEnabled")]
