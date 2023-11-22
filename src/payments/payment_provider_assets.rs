@@ -1,8 +1,8 @@
 service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("payment-provider-assets")]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct PaymentProviderAssetNosqlModel {
     #[serde(rename = "PaymentProvider")]
     pub payment_provider: i32,

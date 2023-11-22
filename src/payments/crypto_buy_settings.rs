@@ -1,8 +1,8 @@
 service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("crypto-buy-settings")]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CryptoBuySettingsNosqlModel {
     #[serde(rename = "Priority")]
     pub priority: i32,
