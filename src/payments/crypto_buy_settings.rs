@@ -4,8 +4,6 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("crypto-buy-settings")]
 pub struct CryptoBuySettingsNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Priority")]
     pub priority: i32,
     #[serde(rename = "PaymentProvider")]

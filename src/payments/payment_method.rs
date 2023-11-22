@@ -4,12 +4,6 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("payment-methods")]
 pub struct PaymentMethodNosqlModel {
-    #[serde(rename = "RowKey")]
-    pub row_key: String,
-    #[serde(rename = "PartitionKey")]
-    pub partition_key: String,
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Name")]
     pub name: String,
     #[serde(rename = "Id")]

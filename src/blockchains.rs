@@ -4,8 +4,6 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("blockchains")]
 pub struct BlockchainNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Weight")]
     pub weight: i32,
     #[serde(rename = "Symbol")]

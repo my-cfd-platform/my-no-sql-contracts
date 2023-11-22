@@ -4,8 +4,6 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("payment-provider-assets")]
 pub struct PaymentProviderAssetNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "PaymentProvider")]
     pub payment_provider: i32,
     #[serde(rename = "ExternalId")]

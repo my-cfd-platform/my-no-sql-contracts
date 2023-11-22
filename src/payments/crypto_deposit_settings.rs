@@ -5,8 +5,6 @@ use crate::payments::shared::CryptoPaymentAssetNosqlModel;
 #[my_no_sql_entity("crypto-deposit-settings")]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CryptoDepositSettingsNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Priority")]
     pub priority: i32,
     #[serde(rename = "PaymentProvider")]
