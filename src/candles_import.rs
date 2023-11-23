@@ -16,6 +16,8 @@ pub struct CandlesImportTaskNosqlModel {
     pub current_datetime: String,
     #[serde(rename = "Source")]
     pub source: i32,
+    #[serde(rename = "VolumeMultiplier")]
+    pub volume_multiplier: Option<f64>,
 }
 
 impl CandlesImportTaskNosqlModel {
