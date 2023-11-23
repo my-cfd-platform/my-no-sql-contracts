@@ -1,15 +1,9 @@
 service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("candles-import-tasks")]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CandlesImportTaskNosqlModel {
-    #[serde(rename = "RowKey")]
-    pub row_key: String,
-    #[serde(rename = "PartitionKey")]
-    pub partition_key: String,
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Instrument")]
     pub instrument: String,
     #[serde(rename = "CandleType")]
