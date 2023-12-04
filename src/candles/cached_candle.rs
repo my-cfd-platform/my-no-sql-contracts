@@ -28,6 +28,8 @@ pub struct CacheCandleDataNosqlModel {
     pub low: String,
     #[serde(rename = "V")]
     pub volume: String,
+    #[serde(rename = "Expires")]
+    pub expires: String,
 }
 
 impl CacheCandleNosqlModel {
