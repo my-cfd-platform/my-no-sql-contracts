@@ -14,6 +14,8 @@ pub struct CacheCandleNosqlModel {
     pub ask_data: CacheCandleDataNosqlModel,
     #[serde(rename = "D")]
     pub date_micros: i64,
+    #[serde(rename = "Expires")]
+    pub expires: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -28,8 +30,6 @@ pub struct CacheCandleDataNosqlModel {
     pub low: String,
     #[serde(rename = "V")]
     pub volume: String,
-    #[serde(rename = "Expires")]
-    pub expires: String,
 }
 
 impl CacheCandleNosqlModel {
