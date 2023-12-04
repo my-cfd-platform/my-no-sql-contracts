@@ -4,11 +4,6 @@ use serde::{Deserialize, Serialize};
 #[my_no_sql_entity("cache-candles")]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CacheCandleNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
-    #[serde(rename = "Expires")]
-    pub expires: String,
-
     #[serde(rename = "T")]
     pub candle_type: i32,
     #[serde(rename = "I")]
