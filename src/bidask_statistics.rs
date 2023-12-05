@@ -1,11 +1,9 @@
 service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("bidask-statistics")]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct BidAskStatisticNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "I")]
     pub instrument_id: String,
     #[serde(rename = "P")]
