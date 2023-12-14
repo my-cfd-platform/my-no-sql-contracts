@@ -1,13 +1,10 @@
 service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("exchange-pending-quotes")]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
 pub struct ExchangePendingQuoteNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
-    pub expires: String,
     pub id: String,
     pub trader_id: String,
     pub wallet_id: String,
