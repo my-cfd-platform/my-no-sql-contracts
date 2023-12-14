@@ -1,11 +1,9 @@
 service_sdk::macros::use_my_no_sql_entity!();
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
 #[my_no_sql_entity("instruments")]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct InstrumentNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Id")]
     pub id: String,
     #[serde(rename = "Name")]
