@@ -5,6 +5,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
 pub struct ExchangePendingQuoteNosqlModel {
+    pub expires: String,
+
     pub id: String,
     pub trader_id: String,
     pub wallet_id: String,
