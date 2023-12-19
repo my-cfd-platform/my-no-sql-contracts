@@ -26,6 +26,8 @@ pub struct PriceStatisticDataNosqlModel {
     pub close: f64,
     #[serde(rename = "V")]
     pub volume: f64,
+    #[serde(rename = "C")]
+    pub change_percent: f64,
 }
 
 impl BidAskStatisticNosqlModel {
