@@ -4,8 +4,6 @@ use serde::{Deserialize, Serialize};
 #[my_no_sql_entity("instrumentsavatar")]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct InstrumentAvatarNosqlModel {
-    #[serde(rename = "TimeStamp")]
-    pub timestamp: String,
     #[serde(rename = "Id")]
     pub id: String,
     #[serde(rename = "Avatar")]
