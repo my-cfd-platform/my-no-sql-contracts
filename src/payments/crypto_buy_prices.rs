@@ -8,7 +8,8 @@ service_sdk::macros::use_my_no_sql_entity!();
 pub struct CryptoBuyPricesNosqlModel {
     #[serde(rename = "FiatByCrypto")]
     pub fiat_by_crypto: HashMap<String, CryptoBuyFiatPricesNosqlModel>,
-
+    #[serde(rename = "Expires")]
+    pub expires: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
