@@ -14,6 +14,8 @@ pub struct CryptoBuySettingsNosqlModel {
     pub assets: Vec<CryptoBuyAssetNosqlModel>,
     #[serde(rename = "Enabled")]
     pub enabled: bool,
+    #[serde(rename = "ConvertEnabled")]
+    pub convert_enabled: bool,
 }
 
 impl CryptoBuySettingsNosqlModel {
