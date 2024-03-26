@@ -16,6 +16,8 @@ pub struct CryptoBuySettingsNosqlModel {
     pub enabled: bool,
     #[serde(rename = "ConvertEnabled")]
     pub convert_enabled: bool,
+    #[serde(rename = "KycRequired")]
+    pub kyc_required: bool,
 }
 
 impl CryptoBuySettingsNosqlModel {
@@ -36,8 +38,8 @@ pub struct CryptoBuyAssetNosqlModel {
     pub fiat_asset_symbol: String,
     #[serde(rename = "CryptoAssetSymbols")]
     pub crypto_asset_symbols: Vec<String>,
-    #[serde(rename = "MinAmount")]
-    pub min_amount: Option<f64>,
-    #[serde(rename = "MaxAmount")]
-    pub max_amount: Option<f64>,
+    #[serde(rename = "FiatAssetMinAmount")]
+    pub fiat_asset_min_amount: Option<f64>,
+    #[serde(rename = "FiatAssetMaxAmount")]
+    pub fiat_asset_max_amount: Option<f64>,
 }
