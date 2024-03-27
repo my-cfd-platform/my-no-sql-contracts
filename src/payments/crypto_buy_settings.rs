@@ -18,6 +18,8 @@ pub struct CryptoBuySettingsNosqlModel {
     pub convert_enabled: bool,
     #[serde(rename = "KycRequired")]
     pub kyc_required: bool,
+    #[serde(rename = "IconUrl")]
+    pub icon_url: Option<String>,
 }
 
 impl CryptoBuySettingsNosqlModel {
