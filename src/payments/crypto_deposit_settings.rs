@@ -15,6 +15,8 @@ pub struct CryptoDepositSettingsNosqlModel {
     pub assets: Vec<CryptoPaymentAssetNosqlModel>,
     #[serde(rename = "Enabled")]
     pub enabled: bool,
+    #[serde(rename = "IconUrl")]
+    pub icon_url: Option<String>,
 }
 
 impl CryptoDepositSettingsNosqlModel {
