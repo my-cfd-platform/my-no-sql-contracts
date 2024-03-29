@@ -22,10 +22,10 @@ pub struct InstrumentNosqlModel {
     pub group_id: Option<String>,
     #[serde(rename = "Weight")]
     pub weight: i32,
-    //#[serde(rename = "DayTimeout")]
-    //pub day_timeout: i32,
-    //#[serde(rename = "NightTimeout")]
-    //pub night_timeout: i32,
+    #[serde(rename = "DayTimeout")]
+    pub day_timeout: i32,
+    #[serde(rename = "NightTimeout")]
+    pub night_timeout: i32,
     #[serde(rename = "TradingDisabled")]
     pub trading_disabled: Option<bool>,
 }
