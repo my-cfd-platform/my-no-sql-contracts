@@ -5,4 +5,4 @@ pub mod payment_method;
 pub mod crypto_buy_settings;
 pub mod payment_provider_assets;
 pub mod crypto_buy_prices;
-[ub mod crypto_sell_settings;
+pub mod crypto_sell_settings;
