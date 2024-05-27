@@ -2,6 +2,7 @@ service_sdk::macros::use_my_no_sql_entity!();
 use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use service_sdk::rust_extensions::date_time::DateTimeAsMicroseconds;
+use crate::exchange::pending_quote::ExchangePendingQuoteNosqlModel;
 
 #[my_no_sql_entity("cached-positions")]
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -59,4 +60,14 @@ pub struct TopUpNosqlModel {
     pub instrument_price: f64,
     pub asset_prices: HashMap<String, f64>,
     pub bonus_amounts: HashMap<String, f64>
+}
+
+impl PositionNosqlModel {
+    pub fn generate_pk(wallet_id: &str) -> &str {
+        wallet_id
+    }
+
+    pub fn generate_rk(id: &str) -> &str {
+        id
+    }
 }
