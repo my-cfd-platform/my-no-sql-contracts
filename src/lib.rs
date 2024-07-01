@@ -32,3 +32,5 @@ pub mod images;
 pub mod candles;
 #[cfg(feature="trading")]
 pub mod trading;
+#[cfg(feature="bonuses")]
+pub mod bonuses;
