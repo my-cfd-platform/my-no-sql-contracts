@@ -1,1 +1,1 @@
-mod voucher_settings;
+pub mod voucher_settings;
