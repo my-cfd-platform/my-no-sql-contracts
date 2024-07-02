@@ -2,9 +2,9 @@ use serde::{Deserialize, Serialize};
 use service_sdk::my_no_sql_sdk::macros::my_no_sql_entity;
 service_sdk::macros::use_my_no_sql_entity!();
 
-#[my_no_sql_entity("bonus-voucher-settings")]
+#[my_no_sql_entity("bonus-voucher-templates")]
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct VoucherSettingsNosqlModel {
+pub struct VoucherTemplateNosqlModel {
     #[serde(rename = "Name")]
     pub name: String,
     #[serde(rename = "Reward")]
@@ -18,7 +18,7 @@ pub struct VoucherSettingsNosqlModel {
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct VoucherRewardNosqlModel {
     #[serde(rename = "Type")]
-    pub reward_type: i32,
+    pub r#type: i32,
     #[serde(rename = "Amount")]
     pub amount: f64,
     #[serde(rename = "Asset")]
@@ -28,12 +28,12 @@ pub struct VoucherRewardNosqlModel {
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct VoucherTaskNosqlModel {
     #[serde(rename = "Type")]
-    pub task_type: i32,
+    pub r#type: i32,
     #[serde(rename = "Goal")]
     pub goal: f64,
 }
 
-impl VoucherSettingsNosqlModel {
+impl VoucherTemplateNosqlModel {
     pub fn generate_pk() -> &'static str {
         "*"
     }
